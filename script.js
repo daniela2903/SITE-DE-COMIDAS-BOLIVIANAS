@@ -1,0 +1,26 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const botaoAcessibilidade = document.getElementById('botao-acessibilidade');
+  const opcoesAcessibilidade = document.getElementById('opcoes-acessibilidade');
+  const aumentarFonte = document.getElementById('aumentar-fonte');
+  const diminuirFonte = document.getElementById('diminuir-fonte');
+
+  // Mostrar/ocultar menu
+  botaoAcessibilidade.addEventListener('click', () => {
+    opcoesAcessibilidade.classList.toggle('apresenta-lista');
+    botaoAcessibilidade.classList.toggle('rotacao-botao');
+  });
+
+  // Aumentar/diminuir fonte
+  let tamanhoFonteAtual = 1;
+  const elementoCorpo = document.body;
+
+  aumentarFonte.addEventListener('click', () => {
+    tamanhoFonteAtual += 0.1;
+    elementoCorpo.style.fontSize = `${tamanhoFonteAtual}rem`;
+  });
+
+  diminuirFonte.addEventListener('click', () => {
+    tamanhoFonteAtual -= 0.1;
+    elementoCorpo.style.fontSize = `${tamanhoFonteAtual}rem`;
+  });
+});
